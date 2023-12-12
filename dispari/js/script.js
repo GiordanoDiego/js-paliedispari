@@ -76,6 +76,7 @@ buttonEven.addEventListener('click', function(){
     
     } else {
         const result = document.getElementById('result').innerHTML = 'Non hai indovinato, hai perso.  ' + " hai scelto: Pari "  + " ,la somma dei numeri è  " + sum + " che è: " + resultPariODispari;
+
         document.getElementById('computer_number').innerHTML = computerRandom;
 
     }
