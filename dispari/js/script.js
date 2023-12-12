@@ -42,14 +42,15 @@ function pariODispari(x){
 }
 
 
-const userChoise = prompt('Scrivi pari o dispari:');
-console.log('userChoise', userChoise, typeof userChoise);
 
 const userNumber = prompt('Scrivi un numero da 1 a 5:');
 const userNumberInt = parseInt(userNumber);
+document.getElementById('user_number').innerHTML = userNumberInt;
+
 console.log('userNumberInt', userNumberInt, typeof userNumberInt);
 
 const computerRandom = randomNumber();
+
 console.log('computerRandom', computerRandom, typeof computerRandom);
 
 const sum = userNumberInt + computerRandom;
@@ -62,11 +63,35 @@ console.log('resultPariODispari', resultPariODispari, typeof resultPariODispari)
 
 
 
-if (userChoise == resultPariODispari){
-    console.log('Hai indovinato hai vinto');
-    alert('Hai indovinato, hai vinto. ' + " hai scelto: " + userChoise + " ,la somma dei numeri è " + sum + " che è: " + resultPariODispari)
+const buttonEven = document.getElementById("button_even");
+console.log('buttonEven', buttonEven, typeof buttonEven);
+const buttonOdd = document.getElementById("button_odd");
+console.log('buttonOdd', buttonOdd, typeof buttonOdd);
 
-} else {
-    console.log('Hai sbagliato hai perso');
-    alert('Non hai indovinato, hai perso.  ' + " hai scelto: " + userChoise + " ,la somma dei numeri è  " + sum + " che è: " + resultPariODispari)
-}
+buttonEven.addEventListener('click', function(){
+    if ("pari" == resultPariODispari){
+        const result = document.getElementById('result').innerHTML = 'Hai indovinato, hai vinto. ' + " hai scelto: Pari " + " ,la somma dei numeri è " + sum + " che è: " + resultPariODispari;
+        document.getElementById('computer_number').innerHTML = computerRandom;
+
+    
+    } else {
+        const result = document.getElementById('result').innerHTML = 'Non hai indovinato, hai perso.  ' + " hai scelto: Pari "  + " ,la somma dei numeri è  " + sum + " che è: " + resultPariODispari;
+        document.getElementById('computer_number').innerHTML = computerRandom;
+
+    }
+})
+
+buttonOdd.addEventListener('click', function(){
+    if ("dispari" == resultPariODispari){
+        const result = document.getElementById('result').innerHTML = 'Hai indovinato, hai vinto. ' + " hai scelto: Dispari" + " ,la somma dei numeri è " + sum + " che è: " + resultPariODispari;
+      
+        document.getElementById('computer_number').innerHTML = computerRandom;
+
+    
+    } else {
+        const result = document.getElementById('result').innerHTML = 'Non hai indovinato, hai perso.  ' + " hai scelto: Dispari" + " ,la somma dei numeri è  " + sum + " che è: " + resultPariODispari;
+      
+        document.getElementById('computer_number').innerHTML = computerRandom;
+
+    }
+})
