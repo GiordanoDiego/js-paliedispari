@@ -64,7 +64,9 @@ console.log('resultPariODispari', resultPariODispari, typeof resultPariODispari)
 
 if (userChoise == resultPariODispari){
     console.log('Hai indovinato hai vinto');
+    alert('Hai indovinato, hai vinto. ' + " hai scelto: " + userChoise + " ,la somma dei numeri è " + sum + " che è: " + resultPariODispari)
 
 } else {
     console.log('Hai sbagliato hai perso');
+    alert('Non hai indovinato, hai perso.  ' + " hai scelto: " + userChoise + " ,la somma dei numeri è  " + sum + " che è: " + resultPariODispari)
 }
