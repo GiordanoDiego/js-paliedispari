@@ -36,13 +36,14 @@ function reverseString(str) {
     //Step 4. Return the reversed string
     return joinArray; // "olleh"
 }
-
-function isPalindrome(word, reverseWord){
+//creo funzione che date la parola e la parola al contrario mi dice se è palindroma e stampa a pagina tramite l'id html ricevuto 
+function isPalindrome(word, reverseWord, idHtml){
     if(word == reverseWord){
-        alert("la parola scelta "+ word + " è palindroma");
+        document.getElementById(idHtml).innerHTML = "La parola scelta "+ word + " è palindroma";
     }
     else{
-        alert("La parola scelta "+ word + " non è palindroma");
+        
+        document.getElementById(idHtml).innerHTML = "La parola scelta "+ word + " non è palindroma";
 
     }
 }
@@ -53,4 +54,6 @@ console.log('userWord', userWord, typeof userWord);
 const reverseUserWord = reverseString(userWord);
 console.log('reverseUserWord', reverseUserWord, typeof reverseUserWord);
 
-isPalindrome(userWord, reverseUserWord);
+isPalindrome(userWord, reverseUserWord, "palindrome_container");
+
+document.getElementById('user_word').innerHTML = userWord;
